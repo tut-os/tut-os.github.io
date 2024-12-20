@@ -25,7 +25,7 @@ const currentUrl = window.location.href;
     
       borderPosition: [`top-right`,`top-left`,`bottom-left`,`bottom`,`bottom-right`,`top`,`top-right`], // Position from which the pop element will appear
       distance:[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],
-      rotation:[40,0],
+      rotation:[[40,0],[40,2]],
       slideInTime: 100, // Duration of the slide-in animation
       slideOutTime: 0,// Duration of the slide-out animation
     
@@ -33,8 +33,8 @@ const currentUrl = window.location.href;
       tooltipAutoShow: false,// Whether to automatically show the tooltip
       closeTippyOnClick: false,// Whether to close the tooltip on click
     
-      maxImageSize: 260, // Maximum size of the pop element
-      minImageSize: 180, // Minimum size of the pop element
+      maxImageSize: 140, // Maximum size of the pop element
+      minImageSize: 100, // Minimum size of the pop element
       animationDelay: 5000, // Delay before the animation starts
     
       parallax:`auto`,
@@ -360,16 +360,16 @@ const currentUrl = window.location.href;
         rotation: 10, // Rotate the element by 10 degrees
         noise: false,
         autoplay: true,
-        mute: true, // Auto mute on autoplay
+        mute: false, // Auto mute on autoplay
         hover_action: () => console.log('Hovered over the YouTube TV!'),
         click_action: () => console.log('Clicked on the YouTube TV!'),
-        tip: 'this is me, i sing too...check my music!', // Add a 'tip' attribute
+        tip: 'this is me, i sing too...listen to my music!', // Add a 'tip' attribute
         thumb: 'https://cdn3d.iconscout.com/3d/premium/thumb/music-notes-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--beats-audio-pack-equipment-illustrations-4596468.png?f=webp', // Add a 'thumb' attribute
         animation: 'fadeIn', // Add a CSS class for animation
         canClose: true, // Enable the close button
         shuffle: true, // Shuffle the array
         frame: 'https://static.vecteezy.com/system/resources/thumbnails/049/352/934/small/old-bronze-or-silver-television-on-isolated-background-png.png', // Single frame image
-        stay_for: 105, // Stay for 5 seconds before transitioning
+        stay_for: 205, // Stay for 5 seconds before transitioning
         in_animation: 'fadeIn', // Custom in animation
         out_animation: 'fadeOut', // Custom out animation
         badge: 'https://static.vecteezy.com/system/resources/thumbnails/050/754/997/small/verified-badge-3d-icon-png.png', // Example badge image

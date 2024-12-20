@@ -179,12 +179,12 @@ $(() => {
           icon: `https://i.ibb.co/LdPvYjK/flicks.png`,
           url: "",
           text: "السبتايتل المصري",
-          action:`soon()`,
+          action:`
+        window.open("https://itismagicbro.wordpress.com/?s=movie", '_blank')`,
           thumb:`https://i.ibb.co/LdPvYjK/flicks.png`,
           tip:`ايوا انا هعملك سبتايتل بالمصري...و مش همسح الشتايم. دانا هترجمهالك... وكمان هحطلك اهم كلمات الفيلم علشان الانجلش بتاعك يبقي احسن وانت بتتفرج`,
           emoji:`🍿`,
         }),
-
 
       
 
@@ -3418,7 +3418,7 @@ function tutbar(options) {
     if (event.key === 'Enter') {
       const inputValue = input.value.trim();
       if (inputValue) {
-        const url = `https://www.itismagicbro.wordpress.com/${inputValue}`;
+        const url = `https://itismagicbro.wordpress.com/?s=${inputValue}`;
         window.open(url, '_blank');
         input.value = ''; // Clear the input field
         toolbarContainer.remove(); // Close the input field
