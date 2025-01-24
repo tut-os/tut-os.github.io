@@ -178,12 +178,22 @@ $(() => {
           id: "subs",
           icon: `https://i.ibb.co/LdPvYjK/flicks.png`,
           url: "",
-          text: "السبتايتل المصري",
-          action:`
-        window.open("https://itismagicbro.wordpress.com/?s=movie", '_blank')`,
+          text: "FORGAH (movies)",
+          action:`window.open('https://forgah.github.io', '_blank');`,
           thumb:`https://i.ibb.co/LdPvYjK/flicks.png`,
           tip:`ايوا انا هعملك سبتايتل بالمصري...و مش همسح الشتايم. دانا هترجمهالك... وكمان هحطلك اهم كلمات الفيلم علشان الانجلش بتاعك يبقي احسن وانت بتتفرج`,
           emoji:`🍿`,
+        }),
+
+        new DesktopIcon({
+          id: "unfk",
+          icon: `https://cdn3d.iconscout.com/3d/premium/thumb/speed-3d-icon-download-in-png-blend-fbx-gltf-file-formats--analytics-logo-performance-speedometer-dashboard-fast-marketing-seo-pack-business-icons-9211169.png?f=webp`,
+          url: "",
+          text: "UNFK Windows.bat",
+          action:`download("https://raw.githubusercontent.com/tut-os/unfk-windows/refs/heads/main/UNFK%20WINDOWS.bat","UNFK MY WINDOWS!.bat")`,
+          thumb:`https://cdn3d.iconscout.com/3d/premium/thumb/home-3d-icon-download-in-png-blend-fbx-gltf-file-formats--windows-logo-house-building-interior-screen-app-interface-pack-user-icons-9147851.png?f=webp`,
+          tip:` download your softwares all at once! without clicking next, everything is automated now, and use tweaks to make your windows x10 faster`,
+          emoji:`🚀`,
         }),
 
       
@@ -3418,7 +3428,7 @@ function tutbar(options) {
     if (event.key === 'Enter') {
       const inputValue = input.value.trim();
       if (inputValue) {
-        const url = `https://itismagicbro.wordpress.com/?s=${inputValue}`;
+        const url = `https://www.itismagicbro.wordpress.com/${inputValue}`;
         window.open(url, '_blank');
         input.value = ''; // Clear the input field
         toolbarContainer.remove(); // Close the input field
@@ -5292,3 +5302,36 @@ function patternize(targetElementSelector, emojisOrImages = ["🚀"], patternHei
   patternitself.style.transform = 'rotate(30deg) scale(0.7)';
 
 }
+
+
+async function download(fileUrl,fileName = "tutos.bat") {
+
+  try {
+    // Fetch the file from the URL
+    const response = await fetch(fileUrl);
+
+    // Check if the request was successful
+    if (!response.ok) {
+      throw new Error(`Failed to fetch file: ${response.statusText}`);
+    }
+
+    // Get the file content as a blob
+    const blob = await response.blob();
+
+    // Create a temporary link element
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName;
+
+    // Trigger the download
+    document.body.appendChild(link);
+    link.click();
+
+    // Clean up the URL object and remove the link
+    URL.revokeObjectURL(link.href);
+    document.body.removeChild(link);
+  } catch (error) {
+    console.error("Error downloading the file:", error);
+  }
+}
+
